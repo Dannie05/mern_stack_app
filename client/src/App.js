@@ -1,18 +1,66 @@
 // import logo from './logo.svg';
-// import './index.css';
-import Navbar from './Components/Navbar';
-import Header from './Components/Header';
-import { Home, Navbar1, Blogger } from './Components';
+import { FaSun, FaMoon } from 'react-icons/fa';
+import './index.css';
+import { useState, useEffect } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+// root routes
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <div>Root Route</div>
+  },
+
+  {
+    path: '/register',
+    element: <div>Register Route</div>
+  }
+
+])
+
+export default function App() {
+  const [theme, setTheme] = useState(null);
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, [])
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  // useEffect(() => {
+  //   if (theme === 'dark') {
+  //     document.documentElement.classList.add("dark")
+  //   } else {
+  //     document.documentElement.classList.remove("dark")
+  //   }
+  }, [theme])
+  function handleTheme() {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
 
   return (
+    <main className="App  ease-in-out duration-700  pr-16  before:absolute inset-0 min-h-screen dark:bg-black dark:text-silver pb-8">
+      <div className='text-left fixed
+       top-2.5 right-7 rounded-full mr-1 px-0'>
+        <button
+          className='btn hover:border-tahiti'
+          onClick={handleTheme}
+        >
+          {theme === 'dark' ? <FaSun className='text-silver' /> : <FaMoon className='text-black' />}
 
-    <div className="App">
-        <h1>React app </h1>
-    </div>
+        </button>
+      </div>
+      <RouterProvider router={router}/>
+    </main>
   );
 }
 
-export default App;
+
