@@ -2,22 +2,23 @@
 import { FaSun, FaMoon } from 'react-icons/fa';
 import './index.css';
 import { useState, useEffect } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router/router';
+// import { Username,PageNotFound, Password, Profile, Register, Recovery, Reset } from './Components';
 // root routes
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>Root Route</div>
-  },
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <div>Root Route</div>
+//   },
 
-  {
-    path: '/register',
-    element: <div>Register Route</div>
-  }
+//   {
+//     path: '/register',
+//     element: <div>Register Route</div>
+//   }
 
-])
+// ])
 
 export default function App() {
   const [theme, setTheme] = useState(null);
@@ -47,7 +48,7 @@ export default function App() {
   }
 
   return (
-    <main className="App  ease-in-out duration-700  pr-16  before:absolute inset-0 min-h-screen dark:bg-black dark:text-silver pb-8">
+    <main className="App  ease-in-out duration-700  before:absolute inset-0 min-h-screen dark:bg-black dark:text-silver pb-8">
       <div className='text-left fixed
        top-2.5 right-7 rounded-full mr-1 px-0'>
         <button

@@ -30,3 +30,4 @@ server/package-lock.json
 
 client/src/App.js
 client/src/index.css
+client/src/index.js

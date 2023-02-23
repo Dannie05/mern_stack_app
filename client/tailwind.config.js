@@ -6,7 +6,8 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    colors: {
+    extend: {
+      colors: {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
@@ -21,9 +22,11 @@ module.exports = {
       'primary-color':'#4b1182',
       'secondary-color':'#ef0b5a',
       'bg-linear':'linear-gradient(to right, #800080, #ef0b5a)',
-      'linear':'linear-gradient(to right, #800080, #ef0b5a)'
+      'linear':'linear-gradient(to right, #800080, #ef0b5a)',
+      'clr-root':'#04d9ff',
+      'clr-bg':'#00051d'
+    }
     },
-    extend: {},
   },
   plugins: [],
 }

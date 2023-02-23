@@ -1,0 +1,20 @@
+
+.glass{
+    /* background: #ffffff8c; */
+    border-radius: 15px;
+    box-shadow: 0 40px 30px #4747470b;
+    backdrop-filter: blur(7.1px);
+    border: 1px solid #ffffff4d;
+    @apply border-0 border-clr-root border-dotted shrink-0 h-3/4 w-[30%] rounded-2xl py-20 px-7 min-w-max dark:border-none;    
+}
+.profile_img{
+    @apply border-4 border-secondary-color rounded-full shadow-lg cursor-pointer hover:border-gray-300;
+}
+
+.textbox{
+    @apply border-0 px-5 py-4 rounded-xl w-3/4 shadow-sm text-lg focus:outline-none;
+}
+
+.btn{
+    @apply border bg-linear w-3/4 py-2 rounded-lg text-xl shadow-sm text-center text-white bg-clr-bg hover:bg-[green] mb-2
+}
